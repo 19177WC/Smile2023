@@ -5,5 +5,25 @@ menu
 {% endblock %}
 
 {% block main %}
+<div class="products">
+    <div class="category-menu">
+        <div>
+            {% for category in categories %}
+            <li class = "category-item">
+                <a href="/menu/{{ category[0] }}">{{ category[1] }}</a>
+            </li>
+            {% endfor %}
+        </div>
+    </div>
 
+    {% for product in products %}
+    <div class="product-box">
+        <h2><div class="product-box-heading">{{ product[1]}}</div></h2>
+        <div class="product-box-image"><img src="/static/images/{{ product[5] }}.jpg"></div>
+        <div class="product-box-info">{{ product[2] }}</div>
+        <div class="product-box-info"><strong>Size:</strong> {{ product[3] }}</div>
+        <div class="product-box-info"><strong>Price:</strong> {{ product[4] }}</div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

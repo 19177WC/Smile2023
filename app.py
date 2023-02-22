@@ -26,7 +26,12 @@ def render_menu(cat_id):  # put application's code here
     cur.execute(query)
     category_list = cur.fetchall()
     print(category_list)
-    return render_template("menu.html", catergories=category_list)
+    query = "SELECT * FROM product WHERE cat_id = ? ORDER by name"
+    cur = con.cursor()
+    cur.execute(query, (cat_id, ))
+    product_list = cur.fetchall()
+    con.close()
+    return render_template("menu.html", catergories=category_list, products=product_list)
 
 
 @app.route('/contact')
