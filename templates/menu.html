@@ -19,10 +19,10 @@ menu
     {% for product in products %}
     <div class="product-box">
         <h2><div class="product-box-heading">{{ product[1]}}</div></h2>
-        <div class="product-box-image"><img src="/static/images/{{ product[5] }}.jpg"></div>
+        <div class="product-box-image"><img src="/static/images/{{ product[4] }}.jpg"></div>
         <div class="product-box-info">{{ product[2] }}</div>
         <div class="product-box-info"><strong>Size:</strong> {{ product[3] }}</div>
-        <div class="product-box-info"><strong>Price:</strong> {{ product[4] }}</div>
+        <div class="product-box-info"><strong>Price:</strong> {{ product[5] }}</div>
     </div>
     {% endfor %}
 </div>

@@ -1,9 +1,12 @@
 from flask import Flask, render_template
 import sqlite3
 from sqlite3 import Error
+from flask_bcrypt import Bcrypt
 DATABASE = "smilecafe.db"
 app = Flask(__name__)
-
+bcrypt = Bcrypt(app)
+app.secret_key = "ueuywq9571"
+db_name = "template/smilecafe.db"
 def open_database(db_name):
     try:
         connection = sqlite3.connect(db_name)
